@@ -31,7 +31,7 @@ SQL Injection lab for practicing HTTP Header injection vulnerabilities.
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/sql-injection-lab.git
+git clone https://github.com/Youssefbakrey/sql-injection-lab.git
 cd sql-injection-lab
 
 # Start the lab
