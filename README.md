@@ -30,12 +30,44 @@ SQL Injection lab for practicing HTTP Header injection vulnerabilities.
 ### Installation
 
 ```bash
-# Clone the repository
-git clone https://github.com/Youssefbakrey/sql-injection-lab.git
+# 1. تأكد من وجود Docker و Docker Compose
+docker --version
+docker-compose --version
+
+# لو مش موجودين، اتبع الخطوات دي:
+# على Kali/Linux:
+sudo apt update
+sudo apt install docker.io docker-compose -y
+sudo systemctl start docker
+sudo systemctl enable docker
+sudo usermod -aG docker $USER  # مهم عشان تشتغل بدون sudo
+
+# أعد تشغيل الجهاز أو logout/login عشان التغييرات تتفعل
+
+# 1. استنساخ المشروع من GitHub
+git clone https://github.com/yourusername/sql-injection-lab.git
 cd sql-injection-lab
 
-# Start the lab
-make up
+# 2. أو لو معاك الملفات محلياً، انقلها للمجلد
 
-# View logs
+# 1. بناء الصور (أول مرة أو عند التعديل)
+make build
+# أو: docker-compose build
+
+# 2. تشغيل الخدمات في الخلفية
+make up
+# أو: docker-compose up -d
+
+# 3. التحقق من أن كل شيء يعمل
+make status
+# أو: docker-compose ps
+
+# 4. عرض السجلات (اختياري)
 make logs
+# أو: docker-compose logs -f
+
+# 1. افتح المتصفح
+# اذهب إلى: http://localhost:8080
+
+# 2. أو استخدم curl للتحقق
+curl http://localhost:8080
