@@ -30,7 +30,6 @@ SQL Injection lab for practicing HTTP Header injection vulnerabilities.
 ### Installation
 
 ```bash
-# 1. تأكد من وجود Docker و Docker Compose
 docker --version
 docker-compose --version
 
