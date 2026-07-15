@@ -42,15 +42,21 @@ sudo usermod -aG docker $USER  # مهم عشان تشتغل بدون sudo
 # أعد تشغيل الجهاز أو logout/login عشان التغييرات تتفعل
 
 # 1. استنساخ المشروع من GitHub
-git clone https://github.com/yourusername/sql-injection-lab.git
+git clone https://github.com/Youssefbakrey/sql-injection-lab.git
 cd sql-injection-lab
 
 # 2. أو لو معاك الملفات محلياً، انقلها للمجلد
 
 # 1. بناء الصور (أول مرة أو عند التعديل)
 make build
+او
+docker compose build
+ثم
 make up
+او
+docker compose up -d
+ثم
 http://localhost:8080
 
-# 2. أو استخدم curl للتحقق
+ أو استخدم curl للتحقق
 curl http://localhost:8080
