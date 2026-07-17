@@ -1,6 +1,6 @@
 <?php
 
-$host = getenv("DB_HOST") ?: "mysql";
+$host = "localhost";
 $user = "labuser";
 $pass = "labpass";
 $dbname = "labdb";
@@ -149,6 +149,27 @@ if ($all_logs_result) {
         <span class="flag-text"><?php echo htmlspecialchars($found_flag); ?></span>
     </div>
     <?php endif; ?>
+
+    <h2>📊 السجلات الخاصة بك</h2>
+    <table>
+        <tr>
+            <th>#</th>
+            <th>User-Agent</th>
+            <th>الوقت</th>
+        </tr>
+        <?php echo $rows_html; ?>
+    </table>
+
+    <h2>📋 جميع السجلات (آخر 30)</h2>
+    <table>
+        <tr>
+            <th>#</th>
+            <th>User-Agent</th>
+            <th>الوقت</th>
+            <th>المصدر</th>
+        </tr>
+        <?php echo $all_rows_html; ?>
+    </table>
 
     </body>
 </html>
